@@ -1,0 +1,64 @@
+<div class="container" *ngIf="businesses">
+    <h3>Restaurants</h3>
+    <div class="row">
+        <div *ngFor="let business of businesses">
+            <div class="col-md-4">
+                <div class="card" style="width: 18rem;">
+                    <div class="card-body">
+                        <img src={{business.image_url}} width="200" height="200">
+                        <h5 (click)="goToDetailPage(business.id)" class="card-title">{{ business.name }}</h5>
+                        <h6 class="card-subtitle mb-2 text-muted">Rating:
+                            <div style="text-align:left">
+                                <star-rating value={{business.rating}} totalstars="5" checkedcolor="orange"
+                                    uncheckedcolor="#ddd" size="20px" readonly="false">
+                                </star-rating>
+                            </div>
+                        </h6>
+                        <br>
+                        <p class="card-text"><strong>Address:</strong>
+                            <br>
+                            {{
+                                business.location.address1 + ", " + business.location.city +  ", " + business.location.country
+                            }}
+                        </p>
+                        <br>
+                        <p class="card-text"><strong>Phone:</strong><br>{{ business.phone }}</p>
+
+                        <a href={{business.url}} class="card-link">Website</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container" *ngIf="events">
+    <h3>Events</h3>
+    <div class="row">
+        <div *ngFor="let event of events">
+            <div class="col-md-4">
+                <div class="card" style="width: 18rem;">
+                    <div class="card-body">
+                        <img src={{event.image_url}} width="200" height="200">
+                        <h5 (click)="goToEventDetailPage(event.id)" class="card-title">{{ event.name }}</h5>
+                        <h6 class="card-subtitle mb-2 text-muted">Category: {{ event.category }}</h6>
+                        <h6 class="card-subtitle mb-2 text-muted">Attending count: {{ event.attending_count }}</h6>
+                        <br>
+                        <p class="card-text"><strong>Description:</strong>
+                            <br>
+                            {{ event.description }}
+                        </p>
+                        <p class="card-text"><strong>Address:</strong>
+                            <br>
+                            {{
+                                event.location.address1 + ", " + event.location.city +  ", " + event.location.country
+                            }}
+                        </p>
+                        <br>
+                        <a href={{event.event_site_url}} class="card-link">Event site URL</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
