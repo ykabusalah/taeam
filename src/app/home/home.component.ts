@@ -9,7 +9,7 @@ import { ApiServiceService } from '../api-service.service';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
-  searchOption: string;
+  searchOption: string = 'restaurant';
   restaurant: string = 'restaurant';
   event: string = 'event';
   userLocation: any = {};
@@ -24,6 +24,12 @@ export class HomeComponent implements OnInit {
 
   searchterm: string = '';
   searchPrice: string = '';
+  openNow: boolean = false;
+
+  sortBy: string = 'rating';
+  sortByRating: string = 'rating';
+  sortByBestMatch: string = 'best_match';
+
   startDate: Date;
   endDate: Date;
 
@@ -76,10 +82,10 @@ export class HomeComponent implements OnInit {
               term: this.searchterm,
               price: this.searchPrice,
               limit: 10,
-              sort_by: 'rating',
+              sort_by: this.sortBy,
               latitude: this.userLocation.coords.latitude,
               longitude: this.userLocation.coords.longitude,
-              open_now: true
+              open_now: this.openNow
             }
           });
       }

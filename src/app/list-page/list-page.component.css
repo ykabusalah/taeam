@@ -1,3 +1,11 @@
 .card {
     height: inherit;
 }
+
+agm-map {
+    height: 500px;
+  }
+
+agm-info-window{
+    padding: 10px;
+}
