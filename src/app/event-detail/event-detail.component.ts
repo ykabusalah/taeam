@@ -21,9 +21,9 @@ export class EventDetailComponent implements OnInit {
   }
 
   async getEventDetail(){
-    const businessId = this.activeRoute.snapshot.paramMap.get("id")
+    const businessId = this.activeRoute.snapshot.paramMap.get('id')
     const response = await this.apiService.getEventDetail(businessId);
 
-    return response
+    return response;
   }
 }

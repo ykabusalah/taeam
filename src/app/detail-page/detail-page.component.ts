@@ -17,14 +17,14 @@ export class DetailPageComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.getBusinessDetail().then(res => this.business = res)
+    this.getBusinessDetail().then(res => this.business = res);
   }
 
   async getBusinessDetail(){
-    const businessId = this.activeRoute.snapshot.paramMap.get("id")
+    const businessId = this.activeRoute.snapshot.paramMap.get('id')
     const response = await this.apiService.getBusinessDetail(businessId);
 
-    return response
+    return response;
   }
 }
 
