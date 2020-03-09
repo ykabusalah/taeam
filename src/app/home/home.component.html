@@ -4,7 +4,7 @@
         <div class="col-md-8">
             <!-- Select to search for business or events -->
             <p class="text-warning" *ngIf="showWarning">{{warning}}</p>
-            <p>I would like to search for:</p>
+            <p>What are you looking for today?</p>
             <div class="form-check">
                 <input class="form-check-input" type="radio" name="restaurant" id="restaurant" [value]="restaurant"
                     [(ngModel)]="searchOption" (change)="updateSearchOptions(restaurant)">
@@ -24,7 +24,7 @@
                 <br>
                 <form>
                     <div class="form-group">
-                        <label for="restaurantSearchTerm">Cuisine</label>
+                        <label for="restaurantSearchTerm">What kind of food are you looking for?</label>
                         <input type="text" class="form-control" id="restaurantSearchTerm"
                             placeholder="Enter a cuisine to search" [(ngModel)]="searchterm" name="searchterm">
                     </div>
