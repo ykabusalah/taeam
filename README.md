@@ -1,4 +1,6 @@
-# RestaurantApp
+#taeam
+
+This app is designed with Angular and Yelp API to provide users with open restaurants and events in the area. 
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.0.4.
 
