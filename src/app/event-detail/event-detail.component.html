@@ -1,55 +1,54 @@
-<div class="container-fluid eventDetailPage" *ngIf="event">
+<div class="container" *ngIf="event">
+    <h3>{{ event.name }}</h3>
     <div class="row">
-        <div class="col-md-3"></div>
-        <div class="col-md-6 eventDetailPageContent">
-            <div>
-                <div>
-                    <h3>{{ event.name }}</h3>
-                    <br>
-                    <img src={{event.image_url}} class="img-fluid">
-                    <br>
-                    <br>
-                    <h5 class="card-title">{{ event.name }}</h5>
-                    <h6 class="card-subtitle mb-2 text-muted">Cost: {{ event.cost }}</h6>
-                    <br>
-
-                    <h6 class="card-subtitle mb-2 text-muted">Category: {{ event.category }}</h6>
-                    <br>
-
-                    <h6 class="card-subtitle mb-2 text-muted">Attending count: {{ event.attending_count }}</h6>
-                    <br>
-
-                    <h6 class="card-subtitle mb-2 text-muted">Interested count: {{ event.interested_count }}</h6>
-                    <br>
-
-                    <p class="card-text"><strong>Description:</strong>
-                        <br> {{ event.description }}
-                    </p>
-                    <br>
-
-                    <p class="card-text"><strong>Address:</strong>
+        <div>
+            <div class="col-md-2"></div>
+            <div class="col-md-8">
+                <div class="card" style="width: 18rem;">
+                    <div class="card-body">
+                        <img src={{event.image_url}} width="200" height="200">
+                        <h5 class="card-title">{{ event.name }}</h5>
+                        <h6 class="card-subtitle mb-2 text-muted">Cost: {{ event.cost }}</h6>
                         <br>
-                        {{
+
+                        <h6 class="card-subtitle mb-2 text-muted">Category: {{ event.category }}</h6>
+                        <br>
+
+                        <h6 class="card-subtitle mb-2 text-muted">Attending count: {{ event.attending_count }}</h6>
+                        <br>
+
+                        <h6 class="card-subtitle mb-2 text-muted">Interested count: {{ event.interested_count }}</h6>
+                        <br>
+
+                        <p class="card-text"><strong>Description: </strong>
+                            <br> {{ event.description }}
+                        </p>
+                        <br>
+
+                        <p class="card-text"><strong>Address: </strong>
+                            <br>
+                            {{
                                 event.location.address1 + ", " + event.location.city +  ", " + event.location.country
                             }}
-                    </p>
-                    <br>
+                        </p>
+                        <br>
 
-                    <a href={{event.event_site_url}} class="card-link">Event site URL</a>
-                    <br>
-                    <br>
+                        <a href={{event.event_site_url}} class="card-link">Event Site URL</a>
+                        <br>
+                        <br>
 
-                    <p class="card-text"><strong>Start time:</strong>
-                        <br>{{ event.time_start | date:'short' }}
-                    </p>
-                    <br>
-                    <p class="card-text"><strong>End time:</strong>
-                        <br>{{ event.time_end | date:'short' }}
-                    </p>
-                    <br>
+                        <p class="card-text"><strong>Start time: </strong>
+                            <br>{{ event.time_start | date:'short' }}
+                        </p>
+                        <br>
+                        <p class="card-text"><strong>End time: </strong>
+                            <br>{{ event.time_end | date:'short' }}
+                        </p>
+                        <br>
+                    </div>
                 </div>
             </div>
+            <div class="col-md-2"></div>
         </div>
-        <div class="col-md-3"></div>
     </div>
 </div>
