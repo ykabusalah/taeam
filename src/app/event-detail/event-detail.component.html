@@ -20,12 +20,12 @@
                         <h6 class="card-subtitle mb-2 text-muted">Interested count: {{ event.interested_count }}</h6>
                         <br>
 
-                        <p class="card-text"><strong>Description: </strong>
+                        <p class="card-text"><strong>Description:</strong>
                             <br> {{ event.description }}
                         </p>
                         <br>
 
-                        <p class="card-text"><strong>Address: </strong>
+                        <p class="card-text"><strong>Address:</strong>
                             <br>
                             {{
                                 event.location.address1 + ", " + event.location.city +  ", " + event.location.country
@@ -33,15 +33,15 @@
                         </p>
                         <br>
 
-                        <a href={{event.event_site_url}} class="card-link">Event Site URL</a>
+                        <a href={{event.event_site_url}} class="card-link">Event site URL</a>
                         <br>
                         <br>
 
-                        <p class="card-text"><strong>Start time: </strong>
+                        <p class="card-text"><strong>Start time:</strong>
                             <br>{{ event.time_start | date:'short' }}
                         </p>
                         <br>
-                        <p class="card-text"><strong>End time: </strong>
+                        <p class="card-text"><strong>End time:</strong>
                             <br>{{ event.time_end | date:'short' }}
                         </p>
                         <br>
