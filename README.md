@@ -1,4 +1,7 @@
-# RestaurantApp
+# taeam
+
+This project serves as Yousef Abu-Salah's submission into the Capital One Software Engineering Summit Coding Challenge. Built with
+Angular and deployed via Ziet, this application utilizes HTML5 Geolocation to provide users with restaurants and events in the area.
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.0.4.
 
