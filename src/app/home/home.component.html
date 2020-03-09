@@ -1,10 +1,10 @@
-<div class="container">
-    <div class="row">
-        <div class="col-md-2"></div>
-        <div class="col-md-8">
+<div class="container-fluid homePage">
+    <div class="row homePageContent">
+        <div class="col-md-3"></div>
+        <div class="col-md-6 homecontent">
             <!-- Select to search for business or events -->
             <p class="text-warning" *ngIf="showWarning">{{warning}}</p>
-            <p>What are you looking for today?</p>
+            <p>I would like to search for:</p>
             <div class="form-check">
                 <input class="form-check-input" type="radio" name="restaurant" id="restaurant" [value]="restaurant"
                     [(ngModel)]="searchOption" (change)="updateSearchOptions(restaurant)">
@@ -23,43 +23,55 @@
             <div class="restaurantOptions" *ngIf="showRestaurantOptions">
                 <br>
                 <form>
-                    <div class="form-group">
-                        <label for="restaurantSearchTerm">What kind of food are you looking for?</label>
-                        <input type="text" class="form-control" id="restaurantSearchTerm"
-                            placeholder="Enter a cuisine to search" [(ngModel)]="searchterm" name="searchterm">
-                    </div>
-                    <div class="form-group form-check">
-                        <input type="checkbox" class="form-check-input" id="openNow" name="openNow"
-                            [(ngModel)]="openNow">
-                        <label class="form-check-label" for="openNow">Open now</label>
-                    </div>
-                    <div class="form-group">
-                        <label for="restaurantPriceRange">Price range</label>
-                        <select class="form-control" id="restaurantPriceRange" [(ngModel)]="searchPrice"
-                            name="searchPrice">
-                            <option value="1">below 10$</option>
-                            <option value="2">10$ - 99$</option>
-                            <option value="3">100$ - 999$</option>
-                            <option value="4">1000$ - 9999$</option>
-                        </select>
-                    </div>
+                    <div class="form-row align-items-center">
+                        <div class="col-auto">
+                            <div class="form-check mb-2">
+                                <input type="checkbox" class="form-check-input" id="openNow" name="openNow"
+                                    [(ngModel)]="openNow">
+                                <label class="form-check-label" for="openNow">Open now</label>
+                            </div>
+                        </div>
+                        <div class="col-auto">
+                            <div class="form-check mb-2">
+                                <input class="form-check-input" type="radio" name="sortByRating" id="sortByRating"
+                                    [value]="sortByRating" [(ngModel)]="sortBy">
+                                <label class="form-check-label" for="sortByRating">
+                                    Sort by rating
+                                </label>
+                            </div>
+                        </div>
 
-                    <div class="form-group">
-                        <div class="form-check">
-                            <input class="form-check-input" type="radio" name="sortByRating" id="sortByRating"
-                                [value]="sortByRating" [(ngModel)]="sortBy">
-                            <label class="form-check-label" for="sortByRating">
-                                Sort by rating
-                            </label>
-                        </div>
-                        <div class="form-check">
-                            <input class="form-check-input" type="radio" name="sortByBestMatch" id="sortByBestMatch"
-                                [value]="sortByBestMatch" [(ngModel)]="sortBy">
-                            <label class="form-check-label" for="sortByBestMatch">
-                                Sort by best match
-                            </label>
+
+                        <div class="col-auto">
+                            <div class="form-check mb-2">
+                                <input class="form-check-input" type="radio" name="sortByBestMatch" id="sortByBestMatch"
+                                    [value]="sortByBestMatch" [(ngModel)]="sortBy">
+                                <label class="form-check-label" for="sortByBestMatch">
+                                    Sort by best match
+                                </label>
+                            </div>
                         </div>
                     </div>
+                    <br>
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label for="restaurantSearchTerm">Enter a search term</label>
+                            <input type="text" class="form-control" id="restaurantSearchTerm"
+                                placeholder="Enter a serach term" [(ngModel)]="searchterm" name="searchterm">
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="restaurantPriceRange">Price range</label>
+                            <select class="form-control" id="restaurantPriceRange" [(ngModel)]="searchPrice"
+                                name="searchPrice">
+                                <option value="1">below 10$</option>
+                                <option value="2">10$ - 99$</option>
+                                <option value="3">100$ - 999$</option>
+                                <option value="4">1000$ - 9999$</option>
+                            </select>
+                        </div>
+                    </div>
+                    <br>
+
                 </form>
             </div>
 
@@ -69,12 +81,12 @@
                 <br>
                 <form>
                     <div class="form-group">
-                        <label for="eventStartDate">When does your event start?</label>
+                        <label for="eventStartDate">Events start date</label>
                         <input type="date" class="form-control" id="eventStartDate" [(ngModel)]="startDate"
                             name="startDate">
                     </div>
                     <div class="form-group">
-                        <label for="eventEndDate">When does your event end?</label>
+                        <label for="eventEndDate">Events end date</label>
                         <input type="date" class="form-control" id="eventEndDate" [(ngModel)]="endDate" name="endDate">
                     </div>
                 </form>
@@ -84,6 +96,6 @@
                 Search
             </button>
         </div>
-        <div class="col-md-2"></div>
+        <div class="col-md-3"></div>
     </div>
 </div>

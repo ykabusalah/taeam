@@ -28,7 +28,7 @@ import { EventDetailComponent } from './event-detail/event-detail.component';
     HttpClientModule,
     NgbModule,
     AgmCoreModule.forRoot({
-      apiKey: 'AIzaSyCWZ855hRdEIsMHvEo_W1jWpLiPT42tpL4'
+      apiKey: 'AIzaSyC4vs9ZSdfViYoQjbTYbAmEsbnhRCGxbj4'
     }),
     AppRoutingModule
   ],

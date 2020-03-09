@@ -1,113 +1,132 @@
-<div class="container">
-    <a (click)="backToHome()">Go back to home</a>
-    <br>
-    <ngb-tabset>
-        <ngb-tab id="tab-preventchange1" title="Search results">
-            <ng-template ngbTabContent>
-                <!-- businesses -->
-                <div *ngIf="businesses">
-                    <h3>Restaurants</h3>
-                    <div class="row">
-                        <div *ngFor="let business of businesses">
-                            <div class="col-md-4">
-                                <div class="card" style="width: 18rem;">
-                                    <div class="card-body">
-                                        <img src={{business.image_url}} width="200" height="200">
-                                        <h5 (click)="goToDetailPage(business.id)" class="card-title">{{ business.name }}
-                                        </h5>
-                                        <h6 class="card-subtitle mb-2 text-muted">Rating:
-                                            <div style="text-align:left">
-                                                <star-rating value={{business.rating}} totalstars="5"
-                                                    checkedcolor="orange" uncheckedcolor="#ddd" size="20px"
-                                                    readonly="false">
-                                                </star-rating>
+<div class="container-fluid listPage">
+    <div class="">
+        <div class="row">
+            <div class="col-md-1"></div>
+            <div class="col-md-10 listPageContent">
+                <br>
+                <a (click)="backToHome()">Go back to home</a>
+                <br>
+                <ngb-tabset>
+                    <ngb-tab id="tab-preventchange1" title="Search results">
+                        <ng-template ngbTabContent>
+                            <!-- businesses -->
+                            <div *ngIf="businesses">
+                                <br>
+                                <h3 class="title">Restaurants</h3>
+                                <div class="row">
+                                    <div *ngFor="let business of businesses">
+                                        <div class="col-md-4">
+                                            <!-- <div class="card" style="width: 18rem;"> -->
+                                            <div class="card">
+                                                <div class="card-body">
+                                                    <img src={{business.image_url}} width="200" height="200">
+                                                    <h5 (click)="goToDetailPage(business.id)" class="card-title">
+                                                        {{ business.name }}
+                                                    </h5>
+                                                    <h6 class="card-subtitle mb-2 text-muted">Rating:
+                                                        <div style="text-align:left">
+                                                            <star-rating value={{business.rating}} totalstars="5"
+                                                                checkedcolor="orange" uncheckedcolor="#ddd" size="20px"
+                                                                readonly="false">
+                                                            </star-rating>
+                                                        </div>
+                                                    </h6>
+                                                    <br>
+                                                    <p class="card-text"><strong>Address:</strong>
+                                                        <br>
+                                                        {{
+                                                                            business.location.address1 + ", " + business.location.city +  ", " + business.location.country
+                                                                        }}
+                                                    </p>
+                                                    <br>
+                                                    <p class="card-text"><strong>Phone:</strong><br>{{ business.phone }}
+                                                    </p>
+
+                                                    <a href={{business.url}} class="card-link">Website</a>
+                                                </div>
                                             </div>
-                                        </h6>
-                                        <br>
-                                        <p class="card-text"><strong>Address:</strong>
-                                            <br>
-                                            {{
-                                                                business.location.address1 + ", " + business.location.city +  ", " + business.location.country
-                                                            }}
-                                        </p>
-                                        <br>
-                                        <p class="card-text"><strong>Phone:</strong><br>{{ business.phone }}</p>
-
-                                        <a href={{business.url}} class="card-link">Website</a>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- events -->
-                <div *ngIf="events">
-                    <h3>Events</h3>
-                    <div class="row">
-                        <div *ngFor="let event of events">
-                            <div class="col-md-4">
-                                <div class="card" style="width: 18rem;">
-                                    <div class="card-body">
-                                        <img src={{event.image_url}} width="200" height="200">
-                                        <h5 (click)="goToEventDetailPage(event.id)" class="card-title">{{ event.name }}
-                                        </h5>
-                                        <h6 class="card-subtitle mb-2 text-muted">Category: {{ event.category }}</h6>
-                                        <h6 class="card-subtitle mb-2 text-muted">Attending count:
-                                            {{ event.attending_count }}</h6>
-                                        <br>
-                                        <p class="card-text"><strong>Description:</strong>
-                                            <br>
-                                            {{ event.description }}
-                                        </p>
-                                        <p class="card-text"><strong>Address:</strong>
-                                            <br>
-                                            {{
-                                                event.location.address1 + ", " + event.location.city +  ", " + event.location.country
-                                            }}
-                                        </p>
-                                        <br>
-                                        <a href={{event.event_site_url}} class="card-link">Event site URL</a>
+                            <!-- events -->
+                            <div *ngIf="events">
+                                <br>
+                                <h3 class="title">Events</h3>
+                                <div class="row">
+                                    <div *ngFor="let event of events">
+                                        <div class="col-md-4">
+                                            <div class="card" style="width: 18rem;">
+                                                <div class="card-body">
+                                                    <img src={{event.image_url}} width="200" height="200">
+                                                    <h5 (click)="goToEventDetailPage(event.id)" class="card-title">
+                                                        {{ event.name }}
+                                                    </h5>
+                                                    <h6 class="card-subtitle mb-2 text-muted">Category:
+                                                        {{ event.category }}
+                                                    </h6>
+                                                    <h6 class="card-subtitle mb-2 text-muted">Attending count:
+                                                        {{ event.attending_count }}</h6>
+                                                    <br>
+                                                    <p class="card-text"><strong>Description:</strong>
+                                                        <br>
+                                                        {{ event.description }}
+                                                    </p>
+                                                    <p class="card-text"><strong>Address:</strong>
+                                                        <br>
+                                                        {{
+                                                            event.location.address1 + ", " + event.location.city +  ", " + event.location.country
+                                                        }}
+                                                    </p>
+                                                    <br>
+                                                    <a href={{event.event_site_url}} class="card-link">Event site
+                                                        URL</a>
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                    </div>
-                </div>
-            </ng-template>
-        </ngb-tab>
-        <ngb-tab title="View result on map">
-            <ng-template ngbTabContent>
-                <agm-map [latitude]="lat" [longitude]="lng" [zoom]="zoom" [disableDefaultUI]="false"
-                    [zoomControl]="true">
+                        </ng-template>
+                    </ngb-tab>
+                    <ngb-tab title="View result on map">
+                        <ng-template ngbTabContent>
+                            <agm-map [latitude]="lat" [longitude]="lng" [zoom]="zoom" [disableDefaultUI]="false"
+                                [zoomControl]="true">
 
-                    <agm-marker *ngFor="let m of markers; let i = index"
-                        [latitude]="m.lat" [longitude]="m.lng" [label]="m.label" [markerDraggable]="m.draggable"
-                        (dragEnd)="markerDragEnd(m, $event)">
+                                <agm-marker *ngFor="let m of markers; let i = index" [latitude]="m.lat"
+                                    [longitude]="m.lng" [label]="m.label" [markerDraggable]="m.draggable"
+                                    (dragEnd)="markerDragEnd(m, $event)">
 
-                        <agm-info-window>
-                            <h5>{{m.name}}</h5>
-                            <br>
-                            <img src={{m.image_url}} width="200" height="200">
-                            <br>
-                            <br>
-                            <p>
-                                Address: {{ m.address }}
-                            </p>
-                            <br>
-                            <br>
-                            <p *ngIf="m.description">
-                                Description: {{ m.description }}
-                            </p>
-                        </agm-info-window>
+                                    <agm-info-window>
+                                        <h5>{{m.name}}</h5>
+                                        <br>
+                                        <img src={{m.image_url}} width="200" height="200">
+                                        <br>
+                                        <br>
+                                        <p>
+                                            Address: {{ m.address }}
+                                        </p>
+                                        <br>
+                                        <br>
+                                        <p *ngIf="m.description">
+                                            Description: {{ m.description }}
+                                        </p>
+                                    </agm-info-window>
 
-                    </agm-marker>
+                                </agm-marker>
 
-                    <agm-circle [latitude]="lat + 0.3" [longitude]="lng" [radius]="5000" [fillColor]="'red'"
-                        [circleDraggable]="true" [editable]="true">
-                    </agm-circle>
+                                <agm-circle [latitude]="lat + 0.3" [longitude]="lng" [radius]="5000" [fillColor]="'red'"
+                                    [circleDraggable]="true" [editable]="true">
+                                </agm-circle>
 
-                </agm-map>
-            </ng-template>
-        </ngb-tab>
-    </ngb-tabset>
+                            </agm-map>
+                        </ng-template>
+                    </ngb-tab>
+                </ngb-tabset>
+            </div>
+            <div class="col-md-1"></div>
+        </div>
+
+    </div>
 </div>
