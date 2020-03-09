@@ -7,5 +7,5 @@ export const YELP_FUSION_API_URL = {
 
 export const API_CREDENTIALS = {
     Client_ID: "oJs2q41gBArsqXJuxbfLiQ",
-    API_Key: "YbG0AGeorO-tsY7RZEmthnn75IJM9aVthForX0iF2WIQ4QmeS3AfhseR8DQ8zmA0jpL9yt1ml3NOXmTJhEwuMBIgyusCg9QhmSs_S295xXBbJIZfm-hEzqFXNGxcXnYx"
+    API_Key: "AIzaSyCWzUdlKYN0Ip0BbJ4RermGaV4R-031O_M"
 };
