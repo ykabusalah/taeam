@@ -6,6 +6,6 @@ export const YELP_FUSION_API_URL = {
 };
 
 export const API_CREDENTIALS = {
-    Client_ID: "415792229687-i3p49srkoo33pf02d02iqjm62i9m0dqh.apps.googleusercontent.com",
-    API_Key: "AIzaSyC4vs9ZSdfViYoQjbTYbAmEsbnhRCGxbj4"
+    Client_ID: "oJs2q41gBArsqXJuxbfLiQ",
+    API_Key: "YbG0AGeorO-tsY7RZEmthnn75IJM9aVthForX0iF2WIQ4QmeS3AfhseR8DQ8zmA0jpL9yt1ml3NOXmTJhEwuMBIgyusCg9QhmSs_S295xXBbJIZfm-hEzqFXNGxcXnYx"
 };
